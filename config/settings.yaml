@@ -1,0 +1,55 @@
+# ============================================
+# TradingView Webhook Bot - Settings
+# ============================================
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  log_level: "info"
+
+webhook:
+  ip_whitelist_enabled: true
+  require_secret: true
+  # TradingView webhook source IPs (updated Jan 2025)
+  tradingview_ips:
+    - "52.89.214.238"
+    - "34.212.75.30"
+    - "54.218.53.128"
+    - "52.32.178.7"
+
+risk:
+  daily_loss_limit_percent: 3.0
+  daily_loss_reset_hour: 0          # UTC hour to reset daily loss counter
+  max_positions: 5                  # Max open positions across all symbols
+  max_positions_per_symbol: 1       # Max positions per single symbol
+  default_size_type: "percent"      # fixed | percent | risk | kelly
+  default_size_value: 10.0          # Default size value
+  default_leverage: 1               # Default leverage for futures
+  max_leverage: 50                  # Hard cap on leverage
+  max_single_trade_percent: 50.0    # Max % of balance for a single trade
+  min_order_value: 10.0             # Minimum order value in USDT
+
+trading:
+  default_order_type: "market"
+  retry_count: 3
+  retry_delay_seconds: 1.0
+  order_timeout_seconds: 30
+
+notifications:
+  telegram_enabled: true
+  discord_enabled: false
+  notify_on_open: true
+  notify_on_close: true
+  notify_on_error: true
+  notify_on_risk_limit: true
+
+logging:
+  level: "INFO"
+  file: "logs/bot.log"
+  max_size_mb: 50
+  backup_count: 5
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+
+database:
+  path: "data/trades.db"

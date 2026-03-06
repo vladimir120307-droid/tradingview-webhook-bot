@@ -1,0 +1,37 @@
+# ============================================
+# Exchange Accounts Configuration
+# ============================================
+# Use ${ENV_VAR} syntax to reference environment variables
+# You can define multiple accounts per exchange
+
+accounts:
+  main:
+    exchange: binance
+    api_key: ${BINANCE_API_KEY}
+    api_secret: ${BINANCE_API_SECRET}
+    testnet: ${BINANCE_TESTNET}
+    market_type: futures          # spot | futures
+    margin_type: cross            # cross | isolated
+    default_leverage: 5
+    rate_limit_per_second: 10
+
+  bybit_default:
+    exchange: bybit
+    api_key: ${BYBIT_API_KEY}
+    api_secret: ${BYBIT_API_SECRET}
+    testnet: ${BYBIT_TESTNET}
+    market_type: futures
+    margin_type: cross
+    default_leverage: 5
+    rate_limit_per_second: 10
+
+  okx_default:
+    exchange: okx
+    api_key: ${OKX_API_KEY}
+    api_secret: ${OKX_API_SECRET}
+    passphrase: ${OKX_PASSPHRASE}
+    testnet: ${OKX_TESTNET}
+    market_type: futures
+    margin_type: cross
+    default_leverage: 5
+    rate_limit_per_second: 10
