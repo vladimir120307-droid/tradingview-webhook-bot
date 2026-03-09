@@ -607,3 +607,11 @@ This software is for educational and informational purposes only. Use it at your
 <p align="center">
   If this bot saves you time and makes you money, consider giving it a star on GitHub.
 </p>
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Support
+
+If you find this project useful, please give it a star!
